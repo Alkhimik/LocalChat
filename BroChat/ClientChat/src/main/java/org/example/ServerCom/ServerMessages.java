@@ -15,8 +15,9 @@ public class ServerMessages implements Runnable{
         String serverResponse;
         while(true){
             try{
-            if(!((serverResponse = fromServer.readLine()) != null)) break;
+                if(!((serverResponse = fromServer.readLine()) != null)) break;
             }catch(IOException e){throw new RuntimeException(e);}
+
             if(serverResponse.matches("Server is down")){
                 System.out.println("Server closed. Chat ended.");
                 System.exit(0);

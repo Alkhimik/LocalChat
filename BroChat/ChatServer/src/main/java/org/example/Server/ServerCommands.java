@@ -6,7 +6,7 @@ import org.example.Storage.MessageStorage;
 import java.util.Scanner;
 
 public class ServerCommands implements Runnable{
-    Scanner scanner;
+    private final Scanner scanner;
 
     public ServerCommands(Scanner scanner){
         this.scanner = scanner;
@@ -20,11 +20,10 @@ public class ServerCommands implements Runnable{
             if(command.matches("Exit")){
                 mes.addNewMessage(new Message(-1,"server","Server is down"));
                 System.out.println("server closed.");
+                try {Thread.sleep(500);} catch (InterruptedException ignored) {}
                 System.exit(0);
             }
-
             command = scanner.nextLine();
         }
-
     }
 }

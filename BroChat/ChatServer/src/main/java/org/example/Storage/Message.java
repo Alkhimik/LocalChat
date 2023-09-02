@@ -9,29 +9,22 @@ import org.springframework.stereotype.Component;
 public class Message {
     private String senderName;
     private String message;
-    private int clientId;
-
+    private final int clientId;
     public void setSenderId(String senderName) {
         this.senderName = senderName;
     }
-
     public void setMessage(String message) {
         this.message = message;
     }
-
     public int getClientId() {
         return clientId;
     }
-
     public String getSenderName() {
         return senderName;
     }
-
     public String getMessage() {
         return message;
     }
-
-
     public Message(int clientId,String senderName, String message) {
         this.senderName = senderName;
         this.message = message;

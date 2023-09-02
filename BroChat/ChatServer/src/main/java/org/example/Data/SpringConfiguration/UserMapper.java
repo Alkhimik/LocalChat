@@ -2,7 +2,6 @@ package org.example.Data.SpringConfiguration;
 
 import org.example.Authorization.User;
 import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

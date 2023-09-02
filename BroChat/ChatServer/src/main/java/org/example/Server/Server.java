@@ -1,6 +1,5 @@
 package org.example.Server;
 
-import org.jetbrains.annotations.NotNull;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,9 +9,8 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Server {
-    private ServerSocket server;
-    private Socket client;
-    private int clientId = -1;
+    private final ServerSocket server;
+    private int clientId;
 
     public Server(String port, Scanner scanner) {
         this.server = portCheck(port,scanner);
@@ -22,7 +20,7 @@ public class Server {
     public void serverStart() {
         while(true){
             try{
-                client = server.accept();
+                Socket client = server.accept();
                 clientId++;
                 System.out.println("Server got a new guest!");
 
@@ -36,7 +34,7 @@ public class Server {
         }
     }
 
-    public ServerSocket portCheck(@NotNull String port, Scanner scanner){
+    public ServerSocket portCheck(String port, Scanner scanner){
         ServerSocket server;
         while(true){
             try{

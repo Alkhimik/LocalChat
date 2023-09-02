@@ -1,16 +1,14 @@
 package org.example.Authorization;
 
 import org.example.Data.Repository;
-import org.springframework.context.annotation.PropertySource;
-
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.concurrent.Callable;
 
 public class SignUp implements Callable {
-    private PrintWriter outToClient;
-    private BufferedReader inFromClient;
-    private Repository repository;
+    private final PrintWriter outToClient;
+    private final BufferedReader inFromClient;
+    private final Repository repository;
 
     public SignUp(Repository repository, PrintWriter outToClient, BufferedReader inFromClient){
         this.repository = repository;

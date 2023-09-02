@@ -1,11 +1,9 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="BroChat:jar">
+  <artifact type="jar" build-on-make="true" name="BroChat:jar">
     <output-path>$PROJECT_DIR$/../readyToUseJars/Clinet</output-path>
     <root id="archive" name="BroChat.jar">
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/ClientChat/src/main/resources/META-INF/MANIFEST.MF" />
-      </element>
       <element id="module-output" name="BroChat" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/beust/jcommander/1.82/jcommander-1.82.jar" path-in-jar="/" />
     </root>
   </artifact>

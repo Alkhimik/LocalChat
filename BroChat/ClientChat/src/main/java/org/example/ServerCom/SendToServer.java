@@ -4,8 +4,8 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class SendToServer implements Runnable{
-    private PrintWriter outToServer;
-    private Scanner scan;
+    private final PrintWriter outToServer;
+    private final Scanner scan;
     public SendToServer(PrintWriter outToServer, Scanner scan){
       this.outToServer = outToServer;
       this.scan = scan;

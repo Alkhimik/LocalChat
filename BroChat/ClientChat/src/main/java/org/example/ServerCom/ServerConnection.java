@@ -12,7 +12,7 @@ public class ServerConnection {
     private PrintWriter outToServer;
     private BufferedReader inFromServer;
     private Boolean connectedToServer = false;
-    private Scanner scan;
+    private final Scanner scan;
     public ServerConnection(int serverPort, Scanner scan){
         this.serverPort = serverPort;
         this.scan = scan;
@@ -31,7 +31,8 @@ public class ServerConnection {
 
     public void getConnection() {
         while(true) {
-            try(Socket socket = new Socket("localhost", serverPort);){
+            try{
+                Socket socket = new Socket("localhost", serverPort);
                 inFromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 String connectToOurServer = inFromServer.readLine();
                 if (connectToOurServer == null || !connectToOurServer.contains("Hello from Server!")) {
@@ -64,6 +65,5 @@ public class ServerConnection {
         if(str == null){return;}
         outToServer.println(str);
     }
-
 
 }

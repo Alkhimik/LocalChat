@@ -10,7 +10,6 @@ import java.io.PrintWriter;
 public class SendMessagesToClients implements Runnable{
     private PrintWriter outToClient;
     private User client;
-
     private UserExistence userInChat;
     public SendMessagesToClients(PrintWriter outToClient, User client, UserExistence userInChat) {
         this.outToClient = outToClient;
